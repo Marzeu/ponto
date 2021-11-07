@@ -34,10 +34,11 @@ namespace Ponto
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);            
 
             services.AddDbContext<PontoContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("PontoContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("PontoContext"), builder =>
+                    builder.MigrationsAssembly("Ponto")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
