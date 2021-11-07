@@ -10,8 +10,8 @@ using Ponto.Models;
 namespace Ponto.Migrations
 {
     [DbContext(typeof(PontoContext))]
-    [Migration("20211107214312_outrasEntidades")]
-    partial class outrasEntidades
+    [Migration("20211107235043_primeiraMigration")]
+    partial class primeiraMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -126,9 +126,9 @@ namespace Ponto.Migrations
 
                     b.Property<DateTime>("Entrada2");
 
-                    b.Property<DateTime>("Entrada3");
+                    b.Property<DateTime?>("Entrada3");
 
-                    b.Property<DateTime>("Entrada4");
+                    b.Property<DateTime?>("Entrada4");
 
                     b.Property<int?>("PessoaId");
 
@@ -136,9 +136,9 @@ namespace Ponto.Migrations
 
                     b.Property<DateTime>("Saida2");
 
-                    b.Property<DateTime>("Saida3");
+                    b.Property<DateTime?>("Saida3");
 
-                    b.Property<DateTime>("Saida4");
+                    b.Property<DateTime?>("Saida4");
 
                     b.HasKey("Id");
 

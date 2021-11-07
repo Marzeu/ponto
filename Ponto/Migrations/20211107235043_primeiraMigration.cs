@@ -4,10 +4,24 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Ponto.Migrations
 {
-    public partial class outrasEntidades : Migration
+    public partial class primeiraMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Departamento",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(nullable: true),
+                    Sigla = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Departamento", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Estado",
                 columns: table => new
@@ -104,10 +118,10 @@ namespace Ponto.Migrations
                     Saida1 = table.Column<DateTime>(nullable: false),
                     Entrada2 = table.Column<DateTime>(nullable: false),
                     Saida2 = table.Column<DateTime>(nullable: false),
-                    Entrada3 = table.Column<DateTime>(nullable: false),
-                    Saida3 = table.Column<DateTime>(nullable: false),
-                    Entrada4 = table.Column<DateTime>(nullable: false),
-                    Saida4 = table.Column<DateTime>(nullable: false),
+                    Entrada3 = table.Column<DateTime>(nullable: true),
+                    Saida3 = table.Column<DateTime>(nullable: true),
+                    Entrada4 = table.Column<DateTime>(nullable: true),
+                    Saida4 = table.Column<DateTime>(nullable: true),
                     PessoaId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -154,6 +168,9 @@ namespace Ponto.Migrations
 
             migrationBuilder.DropTable(
                 name: "Pessoa");
+
+            migrationBuilder.DropTable(
+                name: "Departamento");
 
             migrationBuilder.DropTable(
                 name: "Endereco");

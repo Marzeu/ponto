@@ -124,9 +124,9 @@ namespace Ponto.Migrations
 
                     b.Property<DateTime>("Entrada2");
 
-                    b.Property<DateTime>("Entrada3");
+                    b.Property<DateTime?>("Entrada3");
 
-                    b.Property<DateTime>("Entrada4");
+                    b.Property<DateTime?>("Entrada4");
 
                     b.Property<int?>("PessoaId");
 
@@ -134,9 +134,9 @@ namespace Ponto.Migrations
 
                     b.Property<DateTime>("Saida2");
 
-                    b.Property<DateTime>("Saida3");
+                    b.Property<DateTime?>("Saida3");
 
-                    b.Property<DateTime>("Saida4");
+                    b.Property<DateTime?>("Saida4");
 
                     b.HasKey("Id");
 
