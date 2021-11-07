@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Ponto.Models;
+using Ponto.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
