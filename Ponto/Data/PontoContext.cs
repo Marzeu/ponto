@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Ponto.Models;
 
-namespace Ponto.Data
+namespace Ponto.Models
 {
     public class PontoContext : DbContext
     {
@@ -14,6 +14,9 @@ namespace Ponto.Data
         {
         }
 
-        public DbSet<Ponto.Models.Departamento> Departamento { get; set; }
+        public DbSet<Departamento> Departamento { get; set; }
+        public DbSet<Pessoa> Pessoa { get; set; }
+        public DbSet<RegistroDePonto> RegistroDePonto { get; set; }
+
     }
 }
