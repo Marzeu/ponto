@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-
 using Ponto.Models;
 using Ponto.Data;
+using Ponto.Service;
 
 namespace Ponto
 {
@@ -38,6 +38,7 @@ namespace Ponto
                     builder.MigrationsAssembly("Ponto")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<PessoaService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

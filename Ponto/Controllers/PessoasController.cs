@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Ponto.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,17 @@ namespace Ponto.Controllers
 {
     public class PessoasController : Controller
     {
+
+        private readonly PessoaService _pessoaService;
+
+        public PessoasController(PessoaService pessoaService)
+        {
+            _pessoaService = pessoaService;
+        }
         public IActionResult Index()
         {
-            return View();
+            var pessoas = _pessoaService.FindAll();
+            return View(pessoas);
         }
     }
 }
